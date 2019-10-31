@@ -1,0 +1,24 @@
+.area{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.post{
+    height:300px;
+    width:300px;
+    background: #222;
+    border-radius:20px;
+    color:White;
+    padding:1%;
+    margin:1%;
+}
+.btn-buy{
+    font-size:200%;
+    border-radius:10px;
+    background: #e31837;
+    border:none;
+    color:white;
+}
+.btn-buy:hover{
+    background: red;
+}

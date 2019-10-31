@@ -1,21 +1,42 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="main-header">
+  <div class="header-content-logo" [routerLink]="'/main'"><img src="https://cdn1.iconfinder.com/data/icons/gym-filled-outline-1/100/gym-25-512.png" height="50px"></div>
+  <div class="header-content" [routerLink]="'/protein-whey'">PROTEIN COCKTAIL</div>
+  <div class="header-content" [routerLink]="'/fresh-whey'">FRESH COCKTAIL</div>
+  <div class="header-content" [routerLink]="'/constructor'">CONSTRUCTOR</div>
+  <div class="header-content" [routerLink]="'/contact'">CONTACT</div>
+  <div class="header-content-basket" (click)="open = !open"><img src="https://img.icons8.com/plasticine/2x/shopping-basket-2.png" height="60px"></div>
+  <div class="header-content-menu" (click)="show = !show"><img src="https://img.icons8.com/cotton/2x/menu.png" height="50px"></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+
+<div *ngIf="show" class="menu">
+<ul class="menu-slide">
+  <li [routerLink]="'/protein-whey'">PROTEIN COCKTAIL</li>
+  <li [routerLink]="'/fresh-whey'">FRUIT COCKTAIL</li>
+  <li [routerLink]="'/constructor'">CONSTRUCTOR</li>
+  <li [routerLink]="'/contact'">CONTACT</li>
 </ul>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325518.6878856791!2d30.252506954656045!3d50.401699036761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1572335220011!5m2!1sru!2sua" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+
+<div class="basket" *ngIf="open">
+    <img src="https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/minus-icon-14-256.png" height="40px" style="float:right" (click)="del()">
+    <button class="btn-buy" (click)="form = !form">BUY</button>
+ <h3>You basket - <br> {{ value }}</h3>
+</div>
+
+<div class="buy-form" *ngIf="form">
+<p align="right">
+  <img src="https://icon-library.net/images/close-icon-png/close-icon-png-19.jpg" height="60px" (click)="form = !form">
+</p>
+<form action="/buy" method="POST">
+  <span>Address</span>
+  <input type="text" placeholder="Address" name="address"> <br>  
+  <span>Phone number</span>
+  <input type="text" placeholder="Phone number" name="phone"> <br>
+  <button class="btn-buy" (click)="form = !form">BUY</button>
+</form>
+</div>
+
+<br><br><br><br>
 
 <router-outlet></router-outlet>

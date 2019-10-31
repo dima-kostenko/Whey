@@ -1,0 +1,60 @@
+<div class="constructor">
+  <div class="cocktail">
+    <p align="center">
+    <img src="https://cdn1.iconfinder.com/data/icons/gym-filled-outline-1/100/gym-25-512.png" height="200px">
+  </p>
+  <hr width="80%">
+  <ul>
+    <li *ngFor="let i of fruit">{{ i }}</li>
+    <li *ngFor="let y of drink">{{ y }}</li>
+    <li *ngFor="let k of egg">{{ k }}</li>
+  </ul>
+  <h1 align="center">{{ res }}</h1>
+  <p align="center">
+  <button class="btn-count" (click)="count()">Calculate</button>
+  </p>
+  </div>
+
+  <div class="prod">
+    <div class="box">
+    <h2>Fruits</h2>
+    <input type="checkbox" (click)="addFruit('Banana')">
+    <label>Banana</label>
+    <br>
+    <input type="checkbox" (click)="addFruit('Apple')">
+    <label>Apple</label>
+    <br>
+    <input type="checkbox" (click)="addFruit('Orange')">
+    <label>Orange</label>
+    <br>
+    <input type="checkbox" (click)="addFruit('Lemon')">
+    <label>Lemon</label>
+    <br>
+    <input type="checkbox" (click)="addFruit('Cherry')">
+    <label>Cherry</label>
+</div>
+<div class="box">
+    <h2>Drink</h2>
+    <input type="checkbox" (click)="addDrink('Millk')">
+    <label>Millk</label>
+    <br>
+    <input type="checkbox" (click)="addDrink('Water')">
+    <label>Water</label>
+</div>
+<div class="box">
+    <h2>Eggs</h2>
+    <input type="checkbox" (click)="addEgg('1 Egg')">
+    <label>1 Egg</label>
+    <br>
+    <input type="checkbox" (click)="addEgg('2 Egg')">
+    <label>2 Eggs</label>
+    <br>
+    <input type="checkbox" (click)="addEgg('3 Egg')">
+    <label>3 Eggs</label>
+</div>
+<br>
+<p align="center">
+<button class="btn-count" (click)="addItem(bask)" (click)="addNum()">Buy</button>
+</p>
+  </div>
+</div>

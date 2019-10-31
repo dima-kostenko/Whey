@@ -1,0 +1,55 @@
+.constructor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin:0px auto;
+}
+.cocktail{
+width:350px;
+height:500px;
+background: #222;
+color:white;
+border-radius:15px 0px 0px 15px;
+}
+.prod{
+width:350px;
+height:500px;
+background: #222;
+color:white;
+border-radius:0px 15px 15px 0px;
+}
+.box{
+    width:80%;
+    margin:0px auto;
+}
+.btn-count{
+    font-size:150%;
+    border-radius:10px;
+    background: #e31837;
+    border:none;
+    color:white;
+}
+.btn-count:hover{
+    background: red;
+}
+.buy-form{
+    width:500px;
+    height:400px;
+    background: #222;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding:1%;
+    border:solid red;
+}
+@media screen and (max-width:850px){
+    .cocktail{
+        border-radius:10px 10px 0px 0px;
+    }
+    .prod{
+        border-radius: 0px 0px 10px 10px;
+    }
+}
